@@ -12,4 +12,4 @@ if (NOT Boost_FOUND)
     message(FATAL_ERROR "Could not find boost!")
 endif ()
 
-
+add_subdirectory(message_queue)
