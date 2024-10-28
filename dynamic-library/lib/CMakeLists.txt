@@ -7,8 +7,10 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY  ${PROJECT_DIR}/bin)
 set(LIB_BIN_DIR                     ${PROJECT_DIR}/bin)
 set(LIB_SOURCE_DIR                  ${PROJECT_DIR}/lib)
 
-
-add_compile_definitions(BUILD_DLL)
+if (SYS_TARGET_WIN)
+    add_compile_definitions(BUILD_DLL)
+else ()
+endif ()
 
 add_library(lib SHARED lib.cpp lib.h)
 
