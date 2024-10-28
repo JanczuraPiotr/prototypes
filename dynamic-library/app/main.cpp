@@ -4,6 +4,7 @@
 
 int main()
 {
+    print("Udaje ze robie cos waznego");
 
-  return 0;
+    return 0;
 }
