@@ -3,12 +3,17 @@
 
 #include <string>
 
-#if BUILD_DLL
-    #define __LEFT__ __declspec (dllexport)
-    #define __RIGHT__ __stdcall
-#else
-    #define __LEFT__ __declspec (dllimport)
-    #define __RIGHT__
+#if defined(SYS_TARGET_WIN)
+    #if defined(BUILD_DLL)
+        #define __DECLSPEC__ __declspec (dllexport)
+        #define __STDCALL__ __stdcall
+    #else
+        #define __DECLSPEC__ __declspec (dllimport)
+        #define __STDCALL__
+    #endif
+#elif defined(SYS_TARGET_LIN)
+    #define __DECLSPEC__
+    #define __STDCALL__
 #endif
 
 
@@ -16,7 +21,7 @@
 extern "C" {
 #endif
 
-__LEFT__ void __RIGHT__ print(const std::string &input);
+__DECLSPEC__ void __STDCALL__ print(const std::string &input);
 
 #ifdef __cplusplus
 }

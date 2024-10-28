@@ -8,7 +8,7 @@ extern "C" {
 #endif
 
 
-__LEFT__ void __RIGHT__ print(const std::string &input)
+__DECLSPEC__ void __STDCALL__ print(const std::string &input)
 {
     std::cout << input << std::endl;
 }
