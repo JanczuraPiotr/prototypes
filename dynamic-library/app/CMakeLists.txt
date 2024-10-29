@@ -1,4 +1,4 @@
-project(use-lib)
+project(app)
 
 set(PROJECT_DIR                     ${PROJECT_SOURCE_DIR}/..)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY  ${PROJECT_DIR}/bin)
