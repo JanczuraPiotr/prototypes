@@ -1,17 +1,40 @@
 #include "lib.h"
 
 #include<iostream>
-#include<string>
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 
-__DECLSPEC__ void __STDCALL__ print(const std::string &input)
+__DECLSPEC__ void __STDCALL__ start()
 {
-    std::cout << input << std::endl;
 }
+
+__DECLSPEC__ void __STDCALL__ print(const char *input)
+{
+    if (input) {
+        std::cout << input << std::endl;
+    } else {
+        std::cout << "" << std::endl;
+    }
+}
+
+__DECLSPEC__ const char* __STDCALL__ decorate(const char *input)
+{
+    if (!input) {
+        const char *ret = "{}";
+        return ret;
+    }
+
+    std::string _input = "{ " + std::string(input) + " }";
+
+    char *ret = new char[_input.length() + 1];
+    _input.copy(ret, _input.length() + 1, 0);
+    ret[_input.length()] = '\0';
+    return ret;
+}
+
 
 #ifdef __cplusplus
 }

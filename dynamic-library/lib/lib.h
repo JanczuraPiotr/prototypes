@@ -21,7 +21,11 @@
 extern "C" {
 #endif
 
-__DECLSPEC__ void __STDCALL__ print(const std::string &input);
+__DECLSPEC__ void __STDCALL__ start();
+
+__DECLSPEC__ void __STDCALL__ print(const char *input);
+
+__DECLSPEC__ const char* __STDCALL__ decorate(const char *input);
 
 #ifdef __cplusplus
 }
