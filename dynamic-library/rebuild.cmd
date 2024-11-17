@@ -2,7 +2,7 @@
 
 rm -R /c/tmp/cmake/cmd/dynamic_library/prototype/cmake-release
 
-prepare.cmd
-build.cmd
+CALL prepare.cmd
+CALL build.cmd
 
 @echo on

@@ -9,6 +9,13 @@ extern "C" {
 
 __DECLSPEC__ void __STDCALL__ start()
 {
+    static std::string timestamp = [] () {
+        std::string date(__DATE__);
+        std::string time(__TIME__);
+        return "Library created at : " + date + " " + time;
+    } ();
+
+    print(timestamp.c_str());
 }
 
 __DECLSPEC__ void __STDCALL__ print(const char *input)

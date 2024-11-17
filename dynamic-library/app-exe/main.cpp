@@ -4,9 +4,11 @@
 
 int main()
 {
-    print("String bez dekoracji.");
+    start();
 
-    const char *napis = decorate("String z dekoracją.");
+    print("String without decoration.");
+
+    const char *napis = decorate("String with decpration.");
     if (napis) {
         print(napis);
         delete[] napis;
