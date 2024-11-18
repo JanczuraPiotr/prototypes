@@ -8,6 +8,9 @@ set(LIB_SOURCE_DIR                  ${PROJECT_DIR}/lib)
 
 include_directories (${LIB_SOURCE_DIR})
 
-add_executable (${PROJECT_NAME} main.cpp ${LIB_SOURCE_DIR}/lib.h)
+message("app-exe -> LIB_BIN_DIR ${LIB_BIN_DIR}")
+message("app-exe -> LIB_SOURCE_DIR ${LIB_SOURCE_DIR}")
+
+add_executable (${PROJECT_NAME} main.cpp)
 
 target_link_libraries (${PROJECT_NAME} lib )
