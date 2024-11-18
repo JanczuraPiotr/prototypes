@@ -15,9 +15,6 @@ if (SYS_TARGET_WIN)
 
     add_compile_definitions(BUILD_DLL)
 
-    message(STATUS "JAVA_HOME pokonwersji : ${JAVA_HOME}")
-    message(STATUS "JDK_HOME po konwersji : ${JDK_HOME}")
-
     set(JAVA_AWT_LIBRARY "${JAVA_HOME}/lib/libjawt.so")
     set(JAVA_JVM_LIBRARY "${JAVA_HOME}/lib/server/libjvm.so")
 
@@ -40,30 +37,19 @@ else()
     message(FATAL_ERROR "Unable to find JNI")
 endif()
 
-message(${CMAKE_CURRENT_LIST_FILE}:${CMAKE_CURRENT_LIST_LINE}"  "${PROJECT_NAME})
-message(${CMAKE_CURRENT_LIST_FILE}:${CMAKE_CURRENT_LIST_LINE}"  "${JNI_INCLUDE_DIRS})
-message(${CMAKE_CURRENT_LIST_FILE}:${CMAKE_CURRENT_LIST_LINE}"  "${JNI_LIBRARIES})
-
 include_directories(${SRC_ROOT_DIR}/lib)
 include_directories(${JNI_INCLUDE_DIRS})
-
 
 add_library(${PROJECT_NAME} SHARED pl_janczura_Jni.cpp ../lib/lib.cpp)
 
 if (SYS_TARGET_WIN)
+
     set_target_properties(${PROJECT_NAME} PROPERTIES
-            PREFIX "" # Bez tego biblioteka nazywał by się lib-jni.*
+            PREFIX ""
     )
 
 
 elseif (SYS_TARGET_LIN)
 
-#    set(CMAKE_CXX_STANDARD_LIBRARIES "-static-libgcc -static-libstdc++ ${CMAKE_CXX_STANDARD_LIBRARIES}")
 
 endif ()
-
-#set_target_properties(lib_jni PROPERTIES
-#        PREFIX "" # Bez tego biblioteka nazywał by się liblib_jni.*
-#)
-
-#set(CMAKE_CXX_STANDARD_LIBRARIES "-static-libgcc -static-libstdc++ ${CMAKE_CXX_STANDARD_LIBRARIES}")
