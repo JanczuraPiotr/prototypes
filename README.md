@@ -1,0 +1,1 @@
+Kompilacja i testy w systemie Windows wykonałem w konsoli mingw64.
