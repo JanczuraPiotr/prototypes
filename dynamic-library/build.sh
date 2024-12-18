@@ -7,3 +7,5 @@ cd app-java
 mvn package
 
 cd ..
+
+cp "app-java/target/app-java-1.0.jar" "bin/app.jar"
