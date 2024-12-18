@@ -1,3 +1,4 @@
+#include "jni.h"
 #include "pl_janczura_Jni.hpp"
 #include "lib.h"
 
