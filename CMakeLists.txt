@@ -13,4 +13,3 @@ if (NOT Boost_FOUND)
 endif ()
 
 add_subdirectory(dynamic-library)
-#add_subdirectory(message_queue)
